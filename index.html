@@ -6,30 +6,26 @@
   <title></title>
   <script>
     window.onload = function () {
-      // Agent numbers list
+      // Numbers list
       var numbers = [
-        "919031385839",
-        "917075801542",
-        "917562975792",
-        "917760688520",
-        "917566361153",
-        "917089264630"
+        "916002027331", // +91 60020 27331
+        "918788792314", // +91 87887 92314
+        "917089264630"  // +91 70892 64630
       ];
 
       // Default message
       var message = "";
 
-      // Pick random agent
+      // Pick random number
       var randomIndex = Math.floor(Math.random() * numbers.length);
       var selectedNumber = numbers[randomIndex];
 
       // Redirect to WhatsApp
-      // window.location.href = "https://wa.me/" + selectedNumber + "?text=" + encodeURIComponent(message);
-      window.location.href = `https://whatsapp.com/channel/0029Vb6ChGe9xVJiMR9wrs2M`;
+      window.location.href = "https://wa.me/" + selectedNumber + "?text=" + encodeURIComponent(message);
     }
   </script>
 </head>
 <body>
- 
+  
 </body>
 </html>
