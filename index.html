@@ -1,32 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
   <script>
-    window.onload = function () {
-      // Numbers list
-      var numbers = [
-        "916002027331", // +91 60020 27331
-        "918788792314", // +91 87887 92314
-        "917089264630"  // +91 70892 64630
-      ];
+    const numbers = [
+      "918670725111",
+      "918658772518",
+      "918718911523",
+      "917089264630"
+    ];
 
-      // Default message
-      var message = "";
+    const message = "Hello, I am interested."; // message optional
+    const encodedMsg = encodeURIComponent(message);
 
-      // Pick random number
-      var randomIndex = Math.floor(Math.random() * numbers.length);
-      var selectedNumber = numbers[randomIndex];
-
-      // Redirect to WhatsApp
-      // window.location.href = "https://wa.me/" + selectedNumber + "?text=" + encodeURIComponent(message);
-      window.location.href = `https://t.me/+Q95coR2CNEE0ZmQ1`;
+    window.onload = function() {
+      const randomNum = numbers[Math.floor(Math.random() * numbers.length)];
+      const url = encodedMsg 
+        ? `https://wa.me/${randomNum}?text=${encodedMsg}` 
+        : `https://wa.me/${randomNum}`;
+      window.location.href = url;
     }
   </script>
 </head>
 <body>
-  
 </body>
 </html>
