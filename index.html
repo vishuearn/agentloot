@@ -2,24 +2,16 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>Random Redirect</title>
   <script>
-    const numbers = [
-      "918670725111",
-      "918658772518",
-      "918718911523",
-      "917089264630"
-    ];
-
-    const message = "Hello, I am interested."; // message optional
-    const encodedMsg = encodeURIComponent(message);
-
     window.onload = function() {
-      const randomNum = numbers[Math.floor(Math.random() * numbers.length)];
-      const url = encodedMsg 
-        ? `https://wa.me/${randomNum}?text=${encodedMsg}` 
-        : `https://wa.me/${randomNum}`;
-      window.location.href = url;
+      const links = [
+        "https://ngaa.netlify.app/",
+        "https://digitech.gotrackier.com/click?campaign_id=500&pub_id=331"
+      ];
+
+      const randomLink = links[Math.floor(Math.random() * links.length)];
+      window.location.href = randomLink;
     }
   </script>
 </head>
