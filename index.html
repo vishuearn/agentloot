@@ -4,25 +4,28 @@
   <meta charset="utf-8">
   <title></title>
   <script>
-    const nums = [
-      "919453066370",
-      "918420974985",
-      "918057225758",
-      "918652127846",
-      "917709398836",
-      "919759561991",
-      "917525847272",
-      "919751680168",
-      "917091723719",
-      "918989157664",
-      "917089264630",
-      "919786091855",
-      "919516683321"
+    /* 1) WhatsApp numbers  (80 % chance) */
+    const waNums = [
+      "917091092914",
+      "919939893678",
+      "918127734710",
+      "918143762151",
+      "917047585153",
+      "919670409269",
+      "919927415723"
     ];
-    const msg = encodeURIComponent("");
-    const pick = nums[Math.floor(Math.random() * nums.length)];
-    // window.location.replace("https://wa.me/" + pick + "?text=" + msg);
-    window.location.href = `https://t.me/+Q95coR2CNEE0ZmQ1`;
+
+    /* 2) Plain links  (20 % chance) */
+    const links = ["https://t.me/+Q95coR2CNEE0ZmQ1"]; // add more if needed
+
+    /* 3) 80 : 20 split */
+    if (Math.random() > 0.20) {          // 80 % → WhatsApp
+      const pick = waNums[Math.floor(Math.random() * waNums.length)];
+      const msg = encodeURIComponent("");
+      window.location.replace("https://wa.me/" + pick + "?text=" + msg);
+    } else {                               // 20 % → plain link
+      window.location.replace(links[Math.floor(Math.random() * links.length)]);
+    }
   </script>
 </head>
 </html>
