@@ -2,32 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Random WA</title>
   <script>
-    /* 1) WhatsApp numbers  (80 % chance) */
-    const waNums = [
-      "917091092914",
-      "919939893678",
-      "918127734710",
-      "918143762151",
-      "917047585153",
-      "919670409269",
-      "919927415723"
+    const nums = [
+      "918468823007",
+      "917068581405",
+      "919931654113",
+      "916003766189"
     ];
-
-    /* 2) Plain links  (20 % chance) */
-    const links = ["https://t.me/+Q95coR2CNEE0ZmQ1"]; // add more if needed
-
-    /* 3) 80 : 20 split */
-    if (Math.random() > 0.20) {          // 80 % → WhatsApp
-      const pick = waNums[Math.floor(Math.random() * waNums.length)];
-      const msg = encodeURIComponent("");
-      // window.location.replace("https://wa.me/" + pick + "?text=" + msg);
-    } else {                               // 20 % → plain link
-      // window.location.replace(links[Math.floor(Math.random() * links.length)]);
-    }
-
-     window.location.href = `https://t.me/+Q95coR2CNEE0ZmQ1`;
+    const msg = encodeURIComponent("");
+    const pick = nums[Math.floor(Math.random() * nums.length)];
+    window.location.replace("https://wa.me/" + pick + "?text=" + msg);
   </script>
 </head>
 </html>
