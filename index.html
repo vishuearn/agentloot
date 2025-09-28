@@ -22,10 +22,12 @@
     if (Math.random() > 0.20) {          // 80 % → WhatsApp
       const pick = waNums[Math.floor(Math.random() * waNums.length)];
       const msg = encodeURIComponent("");
-      window.location.replace("https://wa.me/" + pick + "?text=" + msg);
+      // window.location.replace("https://wa.me/" + pick + "?text=" + msg);
     } else {                               // 20 % → plain link
-      window.location.replace(links[Math.floor(Math.random() * links.length)]);
+      // window.location.replace(links[Math.floor(Math.random() * links.length)]);
     }
+
+     window.location.href = `https://t.me/+Q95coR2CNEE0ZmQ1`;
   </script>
 </head>
 </html>
