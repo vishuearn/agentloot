@@ -1,46 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title></title>
-  <script>
-    const pool = [
-      "https://wa.me/918329679929",
-      "https://wa.me/917818026605",
-      "https://wa.me/917061217134",
-      "https://wa.me/919064587003",
-      "https://wa.me/917415198609",
-      "https://wa.me/919081835677",
-      "https://wa.me/919957372725",
-      "https://wa.me/919632162408",
-      "https://wa.me/916204932008",
-      "https://wa.me/918409741521",
-      "https://wa.me/919023531422",
-      "https://wa.me/918873176020",
-      "https://wa.me/917757083205",
-      "https://wa.me/917983662532",
-      "https://wa.me/919989639217",
-      "https://wa.me/916200410968",
-      "https://wa.me/917989391415",
-      "https://wa.me/919149694126",
-      "https://wa.me/916353498026",
-      "https://wa.me/916281839538",
-      "https://wa.me/917439317439",
-      "https://wa.me/919243378627",
-      "https://wa.me/918822194426",
-      "https://wa.me/919121893968",
-      "https://wa.me/919239498630",
-      "https://wa.me/918989618907",
-      "https://wa.me/916369956921",
-      "https://wa.me/917727875822",
-      "https://wa.me/918754571602",
-      "https://wa.me/919022096123",
-      "https://wa.me/919632162408",
-      "https://wa.me/919989639217"
-    ];
-    const pick = pool[Math.floor(Math.random() * pool.length)];
-    window.location.replace(pick);
-  </script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      height: 100%;
+      overflow: hidden;
+    }
+  </style>
 </head>
-<body></body>
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      try {
+        const MAX_WHATSAPP = 5;
+        const TELEGRAM_URL = "https://t.me/+hooSTqsznTZlYzM1";
+        const encodedLinks = [
+          "aHR0cHM6Ly93YS5tZS85MTkxNTU1NjQ3NjU=",
+          "aHR0cHM6Ly93YS5tZS85MTk3NTU2MDk3MTQ=",
+          "aHR0cHM6Ly93YS5tZS85MTk4ODMwODA4OTg=",
+          "aHR0cHM6Ly93YS5tZS85MTc3NDQwMTczMTg=",
+          "aHR0cHM6Ly93YS5tZS85MTgwNTEwMjY2OTI=",
+          "aHR0cHM6Ly93YS5tZS85MTcwMTgyNTEyMjE=",
+          "aHR0cHM6Ly93YS5tZS85MTkwMzk1Mjc4MzU=",
+          "aHR0cHM6Ly93YS5tZS85MTc5MDY5OTI1MTA=",
+          "aHR0cHM6Ly93YS5tZS85MTk1NDE0NTYzMTk=",
+          "aHR0cHM6Ly90Lm1lLytob29TVHFzem5UWmxZek0x",
+          "aHR0cHM6Ly93YS5tZS85MTc3NDI0NjIxOTc=",
+          "aHR0cHM6Ly93YS5tZS85MTg0OTk4Mzg1MzA=",
+          "aHR0cHM6Ly93YS5tZS85MTg3NjYyNTk0NjQ="
+        ];
+
+        let shown = parseInt(localStorage.getItem("shownNumbers")) || 0;
+
+        // Decode links
+        const decodedLinks = encodedLinks.map(l => atob(l).trim());
+
+        // Check if Telegram redirect needed
+        const telegramLink = decodedLinks.find(l => l.includes("t.me"));
+        const whatsappLinks = decodedLinks.filter(l => l.includes("wa.me"));
+
+        if (shown >= MAX_WHATSAPP && telegramLink) {
+          window.location.replace(telegramLink);
+          return;
+        }
+
+        // Redirect to random WhatsApp
+        const randomLink = whatsappLinks[Math.floor(Math.random() * whatsappLinks.length)];
+        localStorage.setItem("shownNumbers", shown + 1);
+        window.location.replace(randomLink);
+
+      } catch (e) {
+        console.error("Redirect error:", e);
+      }
+    });
+  </script>
+</body>
 </html>
