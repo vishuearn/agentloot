@@ -1,64 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title></title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      height: 100%;
-      overflow: hidden;
-    }
-  </style>
+<meta http-equiv="refresh" content="0; URL=https://t.me/AGENTLOOTROBOT">
 </head>
 <body>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      try {
-        const MAX_WHATSAPP = 5;
-        const TELEGRAM_URL = "https://t.me/+hooSTqsznTZlYzM1";
-        const encodedLinks = [
-          "aHR0cHM6Ly93YS5tZS85MTc0Mjg3ODQ1MDc=",
-          "aHR0cHM6Ly93YS5tZS85MTc5ODUwNDY5MzY=",
-          "aHR0cHM6Ly93YS5tZS85MTkyNDM3MDI1NTM=",
-          "aHR0cHM6Ly93YS5tZS85MTYyOTk3NDU2MDU=",
-          "aHR0cHM6Ly93YS5tZS85MTYzNzIyNDQ2OTA=",
-          "aHR0cHM6Ly93YS5tZS85MTgyNzE1NTc3MjM=",
-          "aHR0cHM6Ly93YS5tZS85MTkwMTkwODM2NzE=",
-          "aHR0cHM6Ly90Lm1lLytob29TVHFzem5UWmxZek0x",
-          "aHR0cHM6Ly93YS5tZS85MTkyNDM3MDI1NTM=",
-          "aHR0cHM6Ly93YS5tZS85MTgyMjc5NzA0MDY=",
-          "aHR0cHM6Ly93YS5tZS85MTc5NzM0NTc2Mjc=",
-          "aHR0cHM6Ly93YS5tZS85MTc5MDY3MDM2MDg=",
-          "aHR0cHM6Ly93YS5tZS85MTgwNzYyMTcxNzQ="
-        ];
-
-        let shown = parseInt(localStorage.getItem("shownNumbers")) || 0;
-
-        // Decode links
-        const decodedLinks = encodedLinks.map(l => atob(l).trim());
-
-        // Check if Telegram redirect needed
-        const telegramLink = decodedLinks.find(l => l.includes("t.me"));
-        const whatsappLinks = decodedLinks.filter(l => l.includes("wa.me"));
-
-        if (shown >= MAX_WHATSAPP && telegramLink) {
-          window.location.replace(telegramLink);
-          return;
-        }
-
-        // Redirect to random WhatsApp
-        const randomLink = whatsappLinks[Math.floor(Math.random() * whatsappLinks.length)];
-        localStorage.setItem("shownNumbers", shown + 1);
-        window.location.replace(randomLink);
-
-      } catch (e) {
-        console.error("Redirect error:", e);
-      }
-    });
-  </script>
 </body>
 </html>
